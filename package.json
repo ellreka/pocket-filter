@@ -1,0 +1,32 @@
+{
+  "name": "pocket-filter",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": "git@github.com:ellreka/pocket-filter.git",
+  "author": "ellreka",
+  "license": "MIT",
+  "scripts": {
+    "compile": "tsc",
+    "watch": "tsc -w",
+    "lint": "eslint src/** --ext .ts",
+    "lint:fix": "yarn lint --fix"
+  },
+  "dependencies": {
+    "@types/node": "^12.11.1",
+    "@types/request": "^2.48.3",
+    "request": "^2.88.0",
+    "typescript": "^3.6.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.4.0",
+    "@typescript-eslint/parser": "^2.4.0",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.18.2"
+  }
+}
