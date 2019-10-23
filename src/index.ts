@@ -1,4 +1,5 @@
 import request from 'request';
+import _ from 'lodash';
 
 class PocketFilter {
     consumerKey: string;
@@ -14,19 +15,18 @@ class PocketFilter {
             consumer_key: this.consumerKey,
             access_token: this.accessToken,
             detailType: 'complete',
+            // count: 5
         };
         request.post({ url: 'https://getpocket.com/v3/get', qs: params }, (error, response, body) => {
             const pocket_data = JSON.parse(body)['list'];
-            const all_tag = Object.keys(pocket_data).flatMap(value => {
-                return pocket_data[value].tags ? Object.keys(pocket_data[value].tags) : undefined;
+            const all_tag = _.flatMap(pocket_data, (value, key) => {
+                return _.keys(value.tags)
             });
-            const tags_list = Array.from(new Set(all_tag)).filter(Boolean);
-            callback(tags_list);
+            callback(_.uniq(all_tag))
         });
     }
 
     getArticles() {
-        // request.post()
     }
 }
 

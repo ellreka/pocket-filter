@@ -16,8 +16,10 @@
     "lint:fix": "yarn lint --fix"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.144",
     "@types/node": "^12.11.1",
     "@types/request": "^2.48.3",
+    "lodash": "^4.17.15",
     "request": "^2.88.0",
     "typescript": "^3.6.4"
   },
